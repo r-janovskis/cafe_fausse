@@ -35,3 +35,7 @@ After creating environment we activate it with command: `.\.venv\Scripsts\activa
 Next step is to upgrade pip to the newest version: `python -m pip install --upgrade pip`
 
 After the basics we can working with Flask.
+
+To run back-end:
+
+- Create virtual environment in the main directory **cafe_fausse**
