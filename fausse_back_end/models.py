@@ -38,6 +38,7 @@ class Menu(db.Model):
     __tablename__ = 'menu'
     item_id = db.Column(db.Integer, primary_key = True)
     item_name = db.Column(db.String(50), nullable = False, unique = True)
+    item_description = db.Column(db.String(250), nullable = False)
     item_price = db.Column(db.Numeric(5, 2), nullable = False)
     item_category = db.Column(db.Integer, db.ForeignKey('categories.category_id', ondelete = "SET NULL", onupdate = "CASCADE"))
 

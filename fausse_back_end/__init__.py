@@ -29,8 +29,12 @@ def create_app():
     def index():
         return "Welcome to the Cafe Fausse!"
     
-    @app.route('/customers')
-    def get_customers():
-        customer_list = Customer.query.all()
-        return jsonify({'customers': [{'customer_id': c.customer_id, 'customer_name': c.customer_name, 'email': c.email} for c in customer_list] })
+    # Register the public Blueprint
+    from .public import public_bp
+    app.register_blueprint(public_bp)
+
+    # @app.route('/customers')
+    # def get_customers():
+    #     customer_list = Customer.query.all()
+    #     return jsonify({'customers': [{'customer_id': c.customer_id, 'customer_name': c.customer_name, 'email': c.email} for c in customer_list] })
     return app
