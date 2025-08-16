@@ -7,7 +7,7 @@ class Customer(db.Model):
     customer_name = db.Column(db.String(50))
     email = db.Column(db.String(75), unique = True, nullable = False)
     phone_number = db.Column(db.String(15))
-    newsletter_signup = db.Column(db.Boolean, nullable = False, default = False)
+    newsletter_signup = db.Column(db.Boolean, default = False, nullable = False)
 
     def __repr__(self):
         return f"Customer with email '{self.email}' registered."
