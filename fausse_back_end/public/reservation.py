@@ -18,9 +18,18 @@ def reserve_table():
 
     # Check if the customer exists
     customer = Customer.query.filter_by(email = table_reservation['email']).first()
-    # We have a new customer
-    # let's add it to the database
-    if not customer:
+    
+    if customer:
+        # Let's check if we have the name and phone number for the customer
+        if not customer.customer_name:
+            setattr(customer, 'customer_name', table_reservation['name'])
+            db.session.commit()
+        if not customer.phone_number and table_reservation.get('phone_number'):
+            setattr(customer, 'phone_number', table_reservation.get('phone_number') or None)
+            db.session.commit()
+    else:
+        # We have a new customer
+        # let's add it to the database
         new_customer = Customer(
             customer_name = table_reservation['name'],
             email = table_reservation['email'],
