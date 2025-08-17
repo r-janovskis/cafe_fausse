@@ -1,15 +1,17 @@
-from . import public_bp
 from flask import jsonify, request
 from sqlalchemy import and_
 from datetime import datetime, timedelta
 import random
 
+from . import public_bp
+
+from ..models import Reservation, Customer
 from .. import db
 
 @public_bp.route('/reservation', methods = ['POST'])
 def reserve_table():
     # Imoport models for Reservation and Customer tables
-    from ..models import Reservation, Customer
+    
 
     # Get the data from request
     table_reservation = request.get_json()
@@ -22,7 +24,9 @@ def reserve_table():
         new_customer = Customer(
             customer_name = table_reservation['name'],
             email = table_reservation['email'],
-            phone_number = table_reservation['phone_number']
+            # We handle it this differently as phone_number is optional 
+            # and in case it's not provided or is empty we set it to None (or null for the database)
+            phone_number = table_reservation.get('phone_number') or None
         )
         db.session.add(new_customer)
         db.session.commit()

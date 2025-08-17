@@ -4,4 +4,4 @@ from flask import Blueprint
 public_bp = Blueprint('api', __name__)
 
 # Import routes to register them with the Blueprints
-from . import menu, reservation
+from . import menu, reservation, newsletter
