@@ -31,13 +31,14 @@ def create_app():
         db.create_all()
 
     # Create basic route to see if the app works
-    @app.route('/')
-    def index():
-        return "Welcome to the Cafe Fausse!"
+    # @app.route('/')
+    # def index():
+    #     return "Welcome to the Cafe Fausse!"
     
     # Register the public Blueprint
     from .public import public_bp
-    app.register_blueprint(public_bp)
+
+    app.register_blueprint(public_bp, url_prefix='/api')
 
     # @app.route('/customers')
     # def get_customers():

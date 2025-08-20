@@ -39,3 +39,13 @@ After the basics we can working with Flask.
 To run back-end:
 
 - Create virtual environment in the main directory **cafe_fausse**
+
+## Front-end
+
+Front end will be created using command `npm create vite@latest fausse_front_end -- --template react`
+In the set-up it asks for several options, below is the ones I chose:
+
+- Framework: **React**
+- Variant: **JavaScript**
+
+After installation is done we move into the folder with command `cd fausse_front_end` and from there run `npm install` to install all dependencies.
