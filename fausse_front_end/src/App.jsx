@@ -2,8 +2,16 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import { Routes, Route, Link } from "react-router-dom";
-import Menu from "./components/menu/Menu";
+
 import "./App.css";
+
+// Import components that we will use to route the application
+import Root from "./components/root/Root";
+import Home from "./components/home/Home";
+import Menu from "./components/menu/Menu";
+import Gallery from "./components/gallery/Gallery";
+import Reservation from "./components/reservation/Reservation";
+import About from "./components/about/About";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -32,7 +40,13 @@ function App() {
       </p> */}
       <div>
         <Routes>
-          <Route path="/" element={<Menu />} />
+          <Route path="/" element={<Root />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/reservation" element={<Reservation />} />
+            <Route path="/about" element={<About />} />
+          </Route>
         </Routes>
       </div>
     </>

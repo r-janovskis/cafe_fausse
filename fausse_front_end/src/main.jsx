@@ -4,6 +4,11 @@ import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 
+// Import components that we will use to route the application
+import Menu from "./components/menu/Menu";
+import Root from "./components/root/Root";
+import Home from "./components/home/Home";
+
 const root = createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>

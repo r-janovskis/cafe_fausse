@@ -1,0 +1,22 @@
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  border: 1px solid #ccc;
+}
+
+li:last-child {
+  margin-right: 20px;
+}
+
+li {
+  padding: 5px;
+  border-left: 1px solid red;
+  border-right: 1px solid red;
+}
+
+.active {
+  font-weight: bold;
+  color: white;
+}
