@@ -25,3 +25,11 @@ li {
   font-weight: bold;
   color: white;
 }
+
+.navbar {
+  background-color: #faedd6;
+}
+
+a img {
+  width: 60px;
+}
