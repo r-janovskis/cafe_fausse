@@ -37,17 +37,20 @@ function Home() {
         <h1>Welcome to Café Fausse</h1>
         <p>A cousy place to spend an evening...</p>
       </div>
-      <section>
+      <section id="newsletter_signup">
         <h3>Sign up for our newsletter, so you don't miss a thing!</h3>
         <form onSubmit={subscribeToNewsletter}>
           <input
             id="email"
             type="email"
             name="email"
+            className="form-control"
             placeholder="Enter your email"
             onChange={onChangeEmail}
           />
-          <button type="submit">Subscribe</button>
+          <button type="submit" className="btn btn-success">
+            Subscribe
+          </button>
         </form>
       </section>
     </>

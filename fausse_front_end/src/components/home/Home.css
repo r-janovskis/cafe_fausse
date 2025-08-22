@@ -1,0 +1,16 @@
+#newsletter_signup {
+  width: 50%;
+  margin: 0 auto;
+}
+
+#newsletter_signup form {
+  margin: 25px auto;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+#email {
+  width: 50%;
+  display: inline;
+}
