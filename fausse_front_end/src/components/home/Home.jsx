@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import apiServices from "../../services/api_services";
+
+import "./Home.css";
 
 function Home() {
   const [email, setEmail] = useState("");
@@ -20,7 +23,10 @@ function Home() {
     if (!isValidEmail(email)) {
       console.log("That's not a valid format for an email...");
     } else {
-      console.log("Subscribing...");
+      apiServices
+        .subscribeToNewsletter(email)
+        .then((response) => console.log(response.data.message))
+        .catch((error) => console.log(error));
       document.getElementById("email").value = "";
     }
   }
@@ -32,7 +38,7 @@ function Home() {
         <p>A cousy place to spend an evening...</p>
       </div>
       <section>
-        <h3>Sign up for a newsletter to not miss a thing!</h3>
+        <h3>Sign up for our newsletter, so you don't miss a thing!</h3>
         <form onSubmit={subscribeToNewsletter}>
           <input
             id="email"
