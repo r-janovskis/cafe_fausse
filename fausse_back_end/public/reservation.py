@@ -50,6 +50,12 @@ def reserve_table():
     reservation_time = table_reservation['date'] + " " + table_reservation['time']
     reservation_object = datetime.strptime(reservation_time, '%Y-%m-%d %H:%M:%S')
 
+    # Check if the reservation is in the future
+    if reservation_object <= datetime.now():
+        return jsonify({'message': "Ohh, no... Looks like you are trying to make a reservation in the past!"}), 400
+
+
+
     booked_reservations = Reservation.query.filter(and_(
         Reservation.timeslot > reservation_object - timedelta(hours = 2),
         Reservation.timeslot < reservation_object + timedelta(hours = 2)
@@ -63,8 +69,14 @@ def reserve_table():
         if reservation.table_nr in free_tables:
             free_tables.remove(reservation.table_nr)
 
+    # Case where we don't have free tables for the selected time
     if len(free_tables) == 0:
         return jsonify({'message': "We are sorry, but there are no free tables left for this time."}), 400
+    
+    # Check for double booking
+    for reservation in booked_reservations:
+        if reservation.customer_id == customer.customer_id:
+            return jsonify( {'message': "You already have a booking overlapping with the selected time!"} ), 400
 
     # We select a random table from the free tables
     table_for_booking = random.choice(free_tables)
