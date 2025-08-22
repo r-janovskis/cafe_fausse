@@ -9,11 +9,11 @@ function Header() {
       {/* <nav> is built using bootstrap navbar scaffoldings. All the included classes are meant to be make it responsive */}
       <nav className="navbar navbar-expand-md">
         <div className="container-fluid">
-          <Link to="/" classNmae="navbar-brand">
+          <Link to="/" className="navbar-brand">
             <img src="./src/assets/cafe_fausse.jpg" alt="Café Fausse logo" />
           </Link>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNavAltMarkup"
@@ -21,10 +21,10 @@ function Header() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
+          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div className="navbar-nav">
               <NavLink to="/" className="nav-link">
                 Home
               </NavLink>

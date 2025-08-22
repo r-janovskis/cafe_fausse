@@ -5,8 +5,12 @@ import "./Footer.css";
 function Footer() {
   return (
     <footer>
-      <p>Created by: reinis</p>
-      <p>Maybe put subscribe for newsletter here?</p>
+      <div>
+        <h3>Address</h3>
+      </div>
+      <div>
+        <h3>Opening Hours</h3>
+      </div>
     </footer>
   );
 }
