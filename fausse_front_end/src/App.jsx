@@ -38,17 +38,15 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p> */}
-      <div>
-        <Routes>
-          <Route path="/" element={<Root />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/menu" element={<Menu />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/reservation" element={<Reservation />} />
-            <Route path="/about" element={<About />} />
-          </Route>
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Root />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/reservation" element={<Reservation />} />
+          <Route path="/about" element={<About />} />
+        </Route>
+      </Routes>
     </>
   );
 }

@@ -6,7 +6,7 @@ import "./Header.css";
 function Header() {
   return (
     <header>
-      <nav>
+      <nav className="navbar bg-body-tertiary">
         <ul>
           <li>
             <NavLink to="/">Home</NavLink>

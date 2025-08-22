@@ -4,10 +4,10 @@ import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 
-// Import components that we will use to route the application
-import Menu from "./components/menu/Menu";
-import Root from "./components/root/Root";
-import Home from "./components/home/Home";
+// Import bootstrap library for styling
+import "bootstrap/dist/css/bootstrap.min.css";
+// Import bootstrap JS for interactivity
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 const root = createRoot(document.getElementById("root")).render(
   <StrictMode>

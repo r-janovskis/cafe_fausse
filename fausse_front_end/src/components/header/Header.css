@@ -1,3 +1,8 @@
+/* header {
+  background-color: pink;
+  border: 1px dashed darkblue;
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -14,7 +19,7 @@ li {
   padding: 5px;
   border-left: 1px solid red;
   border-right: 1px solid red;
-}
+} */
 
 .active {
   font-weight: bold;
